@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Estudio Andino</title>
+<meta name="description" content="Sistema propio que escribe, narra, anima, revisa y publica videos de ciencia en español.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f4ef;--fg:#16181d;--mut:#5d6370;--card:#fff;--line:#e3dfd6;--acc:#e0482b;--acc2:#1f7a6b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1013;--fg:#ecebe6;--mut:#9aa0ab;--card:#171a1f;--line:#262a31;--acc:#ff6a4a;--acc2:#4fd1b5}}
+:root[data-theme="dark"]{--bg:#0e1013;--fg:#ecebe6;--mut:#9aa0ab;--card:#171a1f;--line:#262a31;--acc:#ff6a4a;--acc2:#4fd1b5}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Archivo,system-ui,sans-serif}
+.w{max-width:1040px;margin:0 auto;padding:0 16px}
+header{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+.tag{font:600 13px JetBrains Mono,monospace;color:var(--acc);letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:clamp(36px,7vw,68px);line-height:1.02;margin:12px 0 16px;font-weight:800;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--acc)}
+.lead{font-size:20px;color:var(--mut);max-width:680px}
+h2{font-size:28px;margin:0 0 20px;letter-spacing:-.01em}
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:32px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.stat b{display:block;font:800 32px Archivo;color:var(--acc2)}
+.stat span{color:var(--mut);font-size:14px}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:15px;counter-increment:s}
+.step::before{content:counter(s);font:600 12px JetBrains Mono,monospace;color:var(--acc);margin-right:8px}
+.arrow{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0;color:var(--mut);font-size:15px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 12px JetBrains Mono,monospace;text-transform:uppercase;color:var(--mut)}
+.scroll{overflow-x:auto}
+.yes{color:var(--acc2);font-weight:600}.no{color:var(--acc);font-weight:600}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+ul{padding-left:20px;margin:0}li{margin:6px 0}
+.mono{font-family:JetBrains Mono,monospace;font-size:14px;color:var(--mut)}
+footer{padding:40px 0 64px;color:var(--mut);font-size:14px}
+a{color:var(--acc)}
+</style>
+</head>
+<body>
+<header><div class="w">
+  <div class="tag">Andinoworks · ficha técnica</div>
+  <h1>Una fábrica de videos de ciencia <em>escrita en código</em>.</h1>
+  <p class="lead">Escribe el guion, lo narra, lo anima con datos, 3D y física real, revisa su propia calidad y lo publica en YouTube, Facebook y TikTok. Todo desde una PC con GPU.</p>
+  <div class="stats">
+    <div class="stat"><b>85+</b><span>producciones</span></div>
+    <div class="stat"><b>150+</b><span>videos finales</span></div>
+    <div class="stat"><b>3</b><span>plataformas</span></div>
+    <div class="stat"><b>0</b><span>editores de video manuales</span></div>
+  </div>
+</div></header>
+
+<section><div class="w">
+  <h2>Cómo trabaja</h2>
+  <div class="flow">
+    <div class="step">Guion con fuentes</div><span class="arrow">→</span>
+    <div class="step">Voz neural o clonada</div><span class="arrow">→</span>
+    <div class="step">Tiempo de cada palabra</div><span class="arrow">→</span>
+    <div class="step">Música generada</div><span class="arrow">→</span>
+    <div class="step">Escenas: SVG · 3D · física</div><span class="arrow">→</span>
+    <div class="step">QA de cuadros</div><span class="arrow">→</span>
+    <div class="step">Render GPU + color</div><span class="arrow">→</span>
+    <div class="step">QA del MP4</div><span class="arrow">→</span>
+    <div class="step">Cola de publicación</div>
+  </div>
+</div></section>
+
+<section><div class="w">
+  <h2>Características</h2>
+  <div class="grid">
+    <div class="card"><h3>Sincronía palabra a palabra</h3><p>Cada animación aparece en el cuadro exacto en que la voz nombra el objeto.</p></div>
+    <div class="card"><h3>3D y física real</h3><p>Three.js para 3D en tiempo real y Blender sin interfaz para caídas, choques, polvo y personajes con esqueleto.</p></div>
+    <div class="card"><h3>QA que frena el render</h3><p>Detecta textos encimados, cortados o ilegibles en celular y cancela el render antes de que salga mal.</p></div>
+    <div class="card"><h3>QA del archivo final</h3><p>Negros, imagen congelada, voz cortada, volumen −14 LUFS y picos. Si falla, no se sube.</p></div>
+    <div class="card"><h3>Ritmo medido</h3><p>Analiza cortes y movimiento contra videos virales de referencia. Shorts con planos de 3,5 s o menos.</p></div>
+    <div class="card"><h3>Looks de color</h3><p>Documental, cine, cálido, frío y película con LUT propias, aplicadas en la codificación.</p></div>
+    <div class="card"><h3>Centro de control</h3><p>Panel web local: cola de publicación por hora, tareas programadas, logs y retención por video.</p></div>
+    <div class="card"><h3>Publicación responsable</h3><p>Sin ráfagas, sin “etiquetá a un amigo”, cada subida verificada después.</p></div>
+  </div>
+</div></section>
+
+<section><div class="w">
+  <h2>Formatos</h2>
+  <div class="scroll"><table>
+    <tr><th>Formato</th><th>Tamaño</th><th>Duración</th><th>Destino</th></tr>
+    <tr><td>Explicador largo</td><td>1920×1080</td><td>6–15 min</td><td>YouTube, Facebook</td></tr>
+    <tr><td>Short / Reel</td><td>1080×1920</td><td>20–60 s</td><td>Shorts, Reels, TikTok</td></tr>
+    <tr><td>Clips verticales</td><td>1080×1920</td><td>15–90 s</td><td>cortados del largo</td></tr>
+    <tr><td>Meme 3D de escalada</td><td>1080×1920</td><td>30–50 s</td><td>Shorts, Reels</td></tr>
+  </table></div>
+</div></section>
+
+<section><div class="w two">
+  <div>
+    <h2>Alcance</h2>
+    <ul>
+      <li class="yes">Divulgación científica con fuentes citadas</li>
+      <li class="yes">Memes 3D y edits de ritmo rápido</li>
+      <li class="yes">Promos para marcas y campañas</li>
+      <li class="yes">Producción diaria automática, pausable</li>
+      <li class="no">No es un SaaS ni se instala: corre en una sola máquina</li>
+      <li class="no">No depende de video generado por IA de pago</li>
+    </ul>
+  </div>
+  <div>
+    <h2>¿Por qué local?</h2>
+    <p>La voz clonada y Blender necesitan GPU, que los servidores gratis de GitHub no tienen; un largo tardaría más que el límite de 6 h por trabajo. Las sesiones de redes y las claves quedan en la máquina, y el costo es cero. GitHub se usa para la documentación y el respaldo privado.</p>
+  </div>
+</div></section>
+
+<section><div class="w">
+  <h2>Tecnologías</h2>
+  <p class="mono">Remotion · React · TypeScript · Three.js · KaTeX · Python · FFmpeg / NVENC · Blender 4.2 · TTS neural y modelos de voz locales · YouTube Data API · Graph API de Meta</p>
+</div></section>
+
+<footer><div class="w">
+  El código del sistema no es público. Para pedir un video, una serie o hablar del sistema: <a href="https://github.com/andinoworks/estudio-andino/issues">abrí un issue</a> o visitá <a href="https://andinoworks.github.io">andinoworks.github.io</a>.<br>© 2026 Andinoworks · todos los derechos reservados.
+</div></footer>
+</body>
+</html>
